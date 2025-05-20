@@ -21,5 +21,20 @@ namespace MediaTek86.view
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpDateDebut_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
