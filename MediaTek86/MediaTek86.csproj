@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\MediaTek86.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,10 +54,15 @@
     <Compile Include="bddmanager\BddManager.cs" />
     <Compile Include="controller\FrmAuthentificationController.cs" />
     <Compile Include="controller\FrmMediaTek86Controller.cs" />
+    <Compile Include="dal\AbsenceAccess.cs" />
     <Compile Include="dal\Access.cs" />
+    <Compile Include="dal\MotifAccess.cs" />
     <Compile Include="dal\PersonnelAccess.cs" />
+    <Compile Include="dal\ResponsableAccess.cs" />
     <Compile Include="dal\ServiceAccess.cs" />
-    <Compile Include="model\Admin.cs" />
+    <Compile Include="model\Absence.cs" />
+    <Compile Include="model\Responsable.cs" />
+    <Compile Include="model\Motif.cs" />
     <Compile Include="model\Personnel.cs" />
     <Compile Include="model\Service.cs" />
     <Compile Include="view\FrmAuthentification.cs">
