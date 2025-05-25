@@ -60,6 +60,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnDemandeAjoutAbs = new System.Windows.Forms.Button();
             this.grbLesPersonnels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnels)).BeginInit();
             this.grbPersonnel.SuspendLayout();
@@ -104,6 +105,7 @@
             this.btnDemandeAbsences.TabIndex = 3;
             this.btnDemandeAbsences.Text = "Absences";
             this.btnDemandeAbsences.UseVisualStyleBackColor = true;
+            this.btnDemandeAbsences.Click += new System.EventHandler(this.btnDemandeAbsences_Click);
             // 
             // btnDemandeSupprPers
             // 
@@ -274,6 +276,7 @@
             // 
             // grbLesAbsences
             // 
+            this.grbLesAbsences.Controls.Add(this.btnDemandeAjoutAbs);
             this.grbLesAbsences.Controls.Add(this.btnDemandeSupprAbs);
             this.grbLesAbsences.Controls.Add(this.btnDemandeModifAbs);
             this.grbLesAbsences.Controls.Add(this.dgvAbsences);
@@ -289,22 +292,24 @@
             // btnDemandeSupprAbs
             // 
             this.btnDemandeSupprAbs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDemandeSupprAbs.Location = new System.Drawing.Point(323, 609);
+            this.btnDemandeSupprAbs.Location = new System.Drawing.Point(618, 609);
             this.btnDemandeSupprAbs.Name = "btnDemandeSupprAbs";
             this.btnDemandeSupprAbs.Size = new System.Drawing.Size(263, 53);
             this.btnDemandeSupprAbs.TabIndex = 2;
             this.btnDemandeSupprAbs.Text = "Supprimer";
             this.btnDemandeSupprAbs.UseVisualStyleBackColor = true;
+            this.btnDemandeSupprAbs.Click += new System.EventHandler(this.btnDemandeSupprAbs_Click);
             // 
             // btnDemandeModifAbs
             // 
             this.btnDemandeModifAbs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDemandeModifAbs.Location = new System.Drawing.Point(33, 609);
+            this.btnDemandeModifAbs.Location = new System.Drawing.Point(323, 609);
             this.btnDemandeModifAbs.Name = "btnDemandeModifAbs";
             this.btnDemandeModifAbs.Size = new System.Drawing.Size(263, 53);
             this.btnDemandeModifAbs.TabIndex = 1;
             this.btnDemandeModifAbs.Text = "Modifier";
             this.btnDemandeModifAbs.UseVisualStyleBackColor = true;
+            this.btnDemandeModifAbs.Click += new System.EventHandler(this.btnDemandeModifAbs_Click);
             // 
             // dgvAbsences
             // 
@@ -313,11 +318,15 @@
             this.dgvAbsences.AllowUserToResizeRows = false;
             this.dgvAbsences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAbsences.Location = new System.Drawing.Point(33, 41);
+            this.dgvAbsences.MultiSelect = false;
             this.dgvAbsences.Name = "dgvAbsences";
-            this.dgvAbsences.RowHeadersWidth = 82;
+            this.dgvAbsences.ReadOnly = true;
+            this.dgvAbsences.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvAbsences.RowTemplate.Height = 33;
+            this.dgvAbsences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAbsences.Size = new System.Drawing.Size(848, 545);
             this.dgvAbsences.TabIndex = 0;
+            this.dgvAbsences.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAbsences_CellContentClick);
             // 
             // grbAbsence
             // 
@@ -368,6 +377,7 @@
             this.btnAnnulAbs.TabIndex = 11;
             this.btnAnnulAbs.Text = "Annuler";
             this.btnAnnulAbs.UseVisualStyleBackColor = true;
+            this.btnAnnulAbs.Click += new System.EventHandler(this.btnAnnulAbs_Click);
             // 
             // btnEnregAbs
             // 
@@ -378,6 +388,7 @@
             this.btnEnregAbs.TabIndex = 10;
             this.btnEnregAbs.Text = "Enregistrer";
             this.btnEnregAbs.UseVisualStyleBackColor = true;
+            this.btnEnregAbs.Click += new System.EventHandler(this.btnEnregAbs_Click);
             // 
             // cboMotif
             // 
@@ -413,6 +424,17 @@
             this.label10.Size = new System.Drawing.Size(134, 32);
             this.label10.TabIndex = 0;
             this.label10.Text = "Date début";
+            // 
+            // btnDemandeAjoutAbs
+            // 
+            this.btnDemandeAjoutAbs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemandeAjoutAbs.Location = new System.Drawing.Point(33, 609);
+            this.btnDemandeAjoutAbs.Name = "btnDemandeAjoutAbs";
+            this.btnDemandeAjoutAbs.Size = new System.Drawing.Size(263, 53);
+            this.btnDemandeAjoutAbs.TabIndex = 5;
+            this.btnDemandeAjoutAbs.Text = "Ajouter";
+            this.btnDemandeAjoutAbs.UseVisualStyleBackColor = true;
+            this.btnDemandeAjoutAbs.Click += new System.EventHandler(this.btnDemandeAjoutAbs_Click);
             // 
             // FrmMediaTek86
             // 
@@ -472,6 +494,7 @@
         private System.Windows.Forms.DateTimePicker dtpDateDebut;
         private System.Windows.Forms.DateTimePicker dtpDateFin;
         private System.Windows.Forms.Button btnDemandeAjoutPers;
+        private System.Windows.Forms.Button btnDemandeAjoutAbs;
     }
 }
 

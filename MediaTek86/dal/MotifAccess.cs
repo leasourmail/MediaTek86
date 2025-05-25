@@ -35,7 +35,7 @@ namespace MediaTek86.dal
             List<Motif> lesMotifs = new List<Motif>();
             if (access != null)
             {
-                string req = "select * from motif order by nom;";
+                string req = "select * from motif order by libelle;";
                 try
                 {
                     List<Object[]> records = access.Manager.ReqSelect(req); 

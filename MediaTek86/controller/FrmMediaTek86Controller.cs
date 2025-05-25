@@ -22,6 +22,16 @@ namespace MediaTek86.controller
         /// </summary>
         private readonly ServiceAccess serviceAccess;
 
+        ///<summary>
+        ///objet d'accès aux opérations possibles sur Absence
+        /// </summary>
+        private readonly AbsenceAccess absenceAccess;
+
+        ///<summary>
+        ///objet d'accès aux opérations possible sur Motif
+        /// </summary>
+        private readonly MotifAccess motifAccess;
+        
         /// <summary>
         /// Récupère les acces aux données
         /// </summary>
@@ -29,6 +39,8 @@ namespace MediaTek86.controller
         {
             personnelAccess = new PersonnelAccess();
             serviceAccess = new ServiceAccess();
+            absenceAccess = new AbsenceAccess();
+            motifAccess = new MotifAccess();
         }
 
         /// <summary>
@@ -49,6 +61,24 @@ namespace MediaTek86.controller
             return serviceAccess.GetLesServices();
         }
 
+
+        ///<summary>
+        ///Recupère et retourne les infos des absences
+        /// </summary>
+        public List<Absence> GetLesAbsences(string nom, string prenom)
+        {
+            return absenceAccess.GetLesAbsences(nom, prenom);
+        }
+
+        ///<summary>
+        ///Recûpère et retourne les infos des motifs
+        /// </summary>
+        public List<Motif> GetLesMotifs()
+        {
+            return motifAccess.GetLesMotifs();
+        }
+  
+        
         ///<summary>
         ///Demande de suppression d'un personnel
         /// </summary>
@@ -75,5 +105,34 @@ namespace MediaTek86.controller
         {
             personnelAccess.UpdatePersonnel(personnel);
         }
+
+        ///<summary>
+        ///Demande de suppression d'une absence
+        ///</summary>
+        ///<param name="absence">objet absence à supprimer</param>
+        public void DelAbsence(Absence absence)
+        {
+            absenceAccess.DelAbsence(absence);
+        }
+
+        ///<summary>
+        ///Demande d'ajout une absence
+        /// </summary>
+        /// <param name="absence">objet absence à ajouter</param>
+        public void AddAbsence (Absence absence)
+        {
+            absenceAccess.AddAbsence(absence);
+        }
+
+        ///<summary>
+        ///Demande de modifier une absence
+        /// </summary>
+        /// <param name="ancienneAbsence">objet ancienne absence</param>
+        /// <param name="nouvelleAbsence">objet nouvelle absence</param>
+        public void UpdateAbsence (Absence ancienneAbsence, Absence nouvelleAbsence )
+        {
+            absenceAccess.UpdateAbsence(ancienneAbsence, nouvelleAbsence);   
+        }
+
     }
 }

@@ -84,18 +84,30 @@ namespace MediaTek86.bddmanager
                     command.Parameters.Add(new MySqlParameter(parameter.Key, parameter.Value));
                 }
             }
-            command.Prepare();
-            MySqlDataReader reader = command.ExecuteReader();
-            int nbCols = reader.FieldCount;
-            List<Object[]> records = new List<object[]>();
-            while (reader.Read())
+            try
             {
-                Object[] attributs = new Object[nbCols];
-                reader.GetValues(attributs);
-                records.Add(attributs);
+                if (parameters != null && parameters.Count > 0)
+                {
+                    command.Prepare();
+                }
+
+                MySqlDataReader reader = command.ExecuteReader();
+                int nbCols = reader.FieldCount;
+                List<Object[]> records = new List<object[]>();
+                while (reader.Read())
+                {
+                    Object[] attributs = new Object[nbCols];
+                    reader.GetValues(attributs);
+                    records.Add(attributs);
+                }
+                reader.Close();
+                return records;
             }
-            reader.Close();
-            return records;
+            catch (Exception ex)
+            {
+                Console.WriteLine("Erreur dans ReqSelect : " + ex.Message);
+                throw;
+            }
         }
     }
 }

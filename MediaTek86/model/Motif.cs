@@ -13,16 +13,16 @@ namespace MediaTek86.model
         ///Valorise les propriétés
         /// </summary>
         /// <param name="idmotif"></param>
-        /// <param name="nom"></param>
+        /// <param name="libelle"></param>
         
-        public Motif (int idmotif, string nom)
+        public Motif (int idmotif, string libelle)
         {
             this.Idmotif = idmotif;
-            this.Nom = nom;
+            this.Libelle = libelle;
         }
 
         public int Idmotif { get; }
-        public string Nom { get; }
+        public string Libelle { get; }
 
         ///<summary>
         ///Définit l'information à retourner (ici juste le nom du motif)
@@ -31,7 +31,7 @@ namespace MediaTek86.model
 
         public override string ToString()
         {
-            return this.Nom;
+            return this.Libelle;
         }
     }
 
