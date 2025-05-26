@@ -44,11 +44,6 @@ namespace MediaTek86.view
         /// </summary>
         private BindingSource bdgAbsences = new BindingSource();
 
-        ///<summary>
-        ///Objet pour gérer la liste des motifs
-        /// </summary>
-        private BindingSource bdgMotifs = new BindingSource();
-
         /// <summary>
         /// Contrôleur de la fenêtre
         /// </summary>
@@ -191,6 +186,14 @@ namespace MediaTek86.view
                     return;
                 }
 
+                // Confirmation d'enregistrement
+                DialogResult result = MessageBox.Show("Voulez-vous enregistrer ces modifications ?","Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result != DialogResult.Yes)
+                {
+                    return; // L'utilisateur a cliqué sur Non et on annule l'enregistrement
+                }
+
                 if (enCoursDeModifPersonnel)
                 {
                     Personnel personnel = (Personnel)dgvPersonnels.SelectedRows[0].DataBoundItem;
@@ -254,23 +257,6 @@ namespace MediaTek86.view
             }
         }
 
-
-        private void FrmMediaTek86_Load(object sender, EventArgs e)
-        {
-            AfficherPersonnels();
-
-        }
-
-        private void AfficherPersonnels()
-        {
-            List<Personnel> personnels;
-            PersonnelAccess personnelAccess = new PersonnelAccess();
-            personnels = personnelAccess.GetLesPersonnels();
-            dgvPersonnels.DataSource = null;
-            dgvPersonnels.DataSource = personnels;
-            dgvPersonnels.Columns["idpersonnel"].Visible = false;
-            
-        }
 
         /// <summary>
         /// Vérifie si un personnel avec le même nom, prénom et service existe déjà (sans tenir compte du personnel sélectionné si modification)
@@ -424,6 +410,17 @@ namespace MediaTek86.view
                         MessageBox.Show("Une absence existe déjà pendant cette période.", "Information");
                         return;
                     }
+
+
+                    // Confirmation d'enregistrement
+                    DialogResult result = MessageBox.Show("Voulez-vous enregistrer ces modifications ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result != DialogResult.Yes)
+                    {
+                        return; // L'utilisateur a cliqué sur Non et on annule l'enregistrement
+                    }
+
+
                     if (enCoursDeModifAbsence && ancienneAbsence != null)
                     {
                         controller.UpdateAbsence(ancienneAbsence, nouvelleAbsence);
@@ -513,37 +510,20 @@ namespace MediaTek86.view
             {
                 // Ignorer l'absence qu'on modifie pour le test de chevauchement
                 if (enCoursDeModifAbsence && ancienneAbsence != null && abs.Idpersonnel == ancienneAbsence.Idpersonnel && abs.Datedebut == ancienneAbsence.Datedebut && abs.Datefin == ancienneAbsence.Datefin && abs.Motif.Idmotif == ancienneAbsence.Motif.Idmotif)
+                {
                     continue;
+                }
 
                 // Vérifie le chevauchement
                 if (dateDebut <= abs.Datefin && dateFin >= abs.Datedebut)
+                {
                     return true;
+                }
             }
-
             return false;
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpDateDebut_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void dgvPersonnels_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvAbsences_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grbLesPersonnels = new System.Windows.Forms.GroupBox();
             this.btnDemandeAjoutPers = new System.Windows.Forms.Button();
             this.btnDemandeAbsences = new System.Windows.Forms.Button();
@@ -48,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.grbLesAbsences = new System.Windows.Forms.GroupBox();
+            this.btnDemandeAjoutAbs = new System.Windows.Forms.Button();
             this.btnDemandeSupprAbs = new System.Windows.Forms.Button();
             this.btnDemandeModifAbs = new System.Windows.Forms.Button();
             this.dgvAbsences = new System.Windows.Forms.DataGridView();
@@ -60,7 +65,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btnDemandeAjoutAbs = new System.Windows.Forms.Button();
             this.grbLesPersonnels.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnels)).BeginInit();
             this.grbPersonnel.SuspendLayout();
@@ -76,19 +80,18 @@
             this.grbLesPersonnels.Controls.Add(this.btnDemandeSupprPers);
             this.grbLesPersonnels.Controls.Add(this.btnDemandeModifPers);
             this.grbLesPersonnels.Controls.Add(this.dgvPersonnels);
-            this.grbLesPersonnels.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbLesPersonnels.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbLesPersonnels.Location = new System.Drawing.Point(32, 31);
             this.grbLesPersonnels.Name = "grbLesPersonnels";
-            this.grbLesPersonnels.Size = new System.Drawing.Size(1408, 689);
+            this.grbLesPersonnels.Size = new System.Drawing.Size(1374, 639);
             this.grbLesPersonnels.TabIndex = 0;
             this.grbLesPersonnels.TabStop = false;
             this.grbLesPersonnels.Text = "Les personnels";
-            this.grbLesPersonnels.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnDemandeAjoutPers
             // 
-            this.btnDemandeAjoutPers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDemandeAjoutPers.Location = new System.Drawing.Point(33, 609);
+            this.btnDemandeAjoutPers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemandeAjoutPers.Location = new System.Drawing.Point(33, 564);
             this.btnDemandeAjoutPers.Name = "btnDemandeAjoutPers";
             this.btnDemandeAjoutPers.Size = new System.Drawing.Size(263, 53);
             this.btnDemandeAjoutPers.TabIndex = 4;
@@ -98,8 +101,8 @@
             // 
             // btnDemandeAbsences
             // 
-            this.btnDemandeAbsences.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDemandeAbsences.Location = new System.Drawing.Point(906, 609);
+            this.btnDemandeAbsences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemandeAbsences.Location = new System.Drawing.Point(907, 564);
             this.btnDemandeAbsences.Name = "btnDemandeAbsences";
             this.btnDemandeAbsences.Size = new System.Drawing.Size(263, 53);
             this.btnDemandeAbsences.TabIndex = 3;
@@ -109,8 +112,8 @@
             // 
             // btnDemandeSupprPers
             // 
-            this.btnDemandeSupprPers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDemandeSupprPers.Location = new System.Drawing.Point(615, 609);
+            this.btnDemandeSupprPers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemandeSupprPers.Location = new System.Drawing.Point(608, 564);
             this.btnDemandeSupprPers.Name = "btnDemandeSupprPers";
             this.btnDemandeSupprPers.Size = new System.Drawing.Size(263, 53);
             this.btnDemandeSupprPers.TabIndex = 2;
@@ -120,8 +123,8 @@
             // 
             // btnDemandeModifPers
             // 
-            this.btnDemandeModifPers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDemandeModifPers.Location = new System.Drawing.Point(323, 609);
+            this.btnDemandeModifPers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemandeModifPers.Location = new System.Drawing.Point(323, 564);
             this.btnDemandeModifPers.Name = "btnDemandeModifPers";
             this.btnDemandeModifPers.Size = new System.Drawing.Size(263, 53);
             this.btnDemandeModifPers.TabIndex = 1;
@@ -134,16 +137,33 @@
             this.dgvPersonnels.AllowUserToAddRows = false;
             this.dgvPersonnels.AllowUserToDeleteRows = false;
             this.dgvPersonnels.AllowUserToResizeRows = false;
-            this.dgvPersonnels.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPersonnels.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPersonnels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersonnels.Cursor = System.Windows.Forms.Cursors.Default;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPersonnels.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPersonnels.Location = new System.Drawing.Point(33, 41);
             this.dgvPersonnels.MultiSelect = false;
             this.dgvPersonnels.Name = "dgvPersonnels";
             this.dgvPersonnels.ReadOnly = true;
+            this.dgvPersonnels.RowHeadersVisible = false;
             this.dgvPersonnels.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvPersonnels.RowTemplate.Height = 33;
             this.dgvPersonnels.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPersonnels.Size = new System.Drawing.Size(1340, 545);
+            this.dgvPersonnels.Size = new System.Drawing.Size(1309, 499);
             this.dgvPersonnels.TabIndex = 0;
             this.dgvPersonnels.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPersonnels_CellContentClick);
             // 
@@ -162,18 +182,17 @@
             this.grbPersonnel.Controls.Add(this.label2);
             this.grbPersonnel.Controls.Add(this.label1);
             this.grbPersonnel.Enabled = false;
-            this.grbPersonnel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbPersonnel.Location = new System.Drawing.Point(32, 753);
+            this.grbPersonnel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbPersonnel.Location = new System.Drawing.Point(32, 691);
             this.grbPersonnel.Name = "grbPersonnel";
-            this.grbPersonnel.Size = new System.Drawing.Size(1408, 345);
+            this.grbPersonnel.Size = new System.Drawing.Size(1374, 345);
             this.grbPersonnel.TabIndex = 1;
             this.grbPersonnel.TabStop = false;
             this.grbPersonnel.Text = "Ajouter un personnel";
-            this.grbPersonnel.Enter += new System.EventHandler(this.groupBox1_Enter_1);
             // 
             // btnAnnulPers
             // 
-            this.btnAnnulPers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnulPers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnulPers.Location = new System.Drawing.Point(323, 264);
             this.btnAnnulPers.Name = "btnAnnulPers";
             this.btnAnnulPers.Size = new System.Drawing.Size(263, 53);
@@ -184,7 +203,7 @@
             // 
             // btnEnregPers
             // 
-            this.btnEnregPers.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnregPers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnregPers.Location = new System.Drawing.Point(33, 264);
             this.btnEnregPers.Name = "btnEnregPers";
             this.btnEnregPers.Size = new System.Drawing.Size(263, 53);
@@ -196,64 +215,64 @@
             // cboService
             // 
             this.cboService.FormattingEnabled = true;
-            this.cboService.Location = new System.Drawing.Point(855, 199);
+            this.cboService.Location = new System.Drawing.Point(785, 191);
             this.cboService.Name = "cboService";
-            this.cboService.Size = new System.Drawing.Size(400, 40);
+            this.cboService.Size = new System.Drawing.Size(400, 37);
             this.cboService.TabIndex = 9;
             // 
             // txtTel
             // 
-            this.txtTel.Location = new System.Drawing.Point(855, 131);
+            this.txtTel.Location = new System.Drawing.Point(785, 131);
             this.txtTel.Name = "txtTel";
-            this.txtTel.Size = new System.Drawing.Size(400, 39);
+            this.txtTel.Size = new System.Drawing.Size(400, 35);
             this.txtTel.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(734, 207);
+            this.label5.Location = new System.Drawing.Point(680, 194);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(90, 32);
+            this.label5.Size = new System.Drawing.Size(94, 29);
             this.label5.TabIndex = 7;
             this.label5.Text = "Service";
             // 
             // txtMail
             // 
-            this.txtMail.Location = new System.Drawing.Point(855, 68);
+            this.txtMail.Location = new System.Drawing.Point(785, 68);
             this.txtMail.Name = "txtMail";
-            this.txtMail.Size = new System.Drawing.Size(518, 39);
+            this.txtMail.Size = new System.Drawing.Size(518, 35);
             this.txtMail.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(734, 134);
+            this.label4.Location = new System.Drawing.Point(680, 131);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 32);
+            this.label4.Size = new System.Drawing.Size(49, 29);
             this.label4.TabIndex = 5;
             this.label4.Text = "Tel";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(734, 68);
+            this.label3.Location = new System.Drawing.Point(680, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 32);
+            this.label3.Size = new System.Drawing.Size(58, 29);
             this.label3.TabIndex = 4;
             this.label3.Text = "Mail";
             // 
             // txtPrenom
             // 
-            this.txtPrenom.Location = new System.Drawing.Point(150, 131);
+            this.txtPrenom.Location = new System.Drawing.Point(132, 131);
             this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(518, 39);
+            this.txtPrenom.Size = new System.Drawing.Size(518, 35);
             this.txtPrenom.TabIndex = 3;
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(150, 68);
+            this.txtNom.Location = new System.Drawing.Point(132, 68);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(518, 39);
+            this.txtNom.Size = new System.Drawing.Size(518, 35);
             this.txtNom.TabIndex = 2;
             // 
             // label2
@@ -261,7 +280,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(27, 134);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 32);
+            this.label2.Size = new System.Drawing.Size(98, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Prénom";
             // 
@@ -270,7 +289,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(27, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 32);
+            this.label1.Size = new System.Drawing.Size(65, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nom";
             // 
@@ -281,18 +300,29 @@
             this.grbLesAbsences.Controls.Add(this.btnDemandeModifAbs);
             this.grbLesAbsences.Controls.Add(this.dgvAbsences);
             this.grbLesAbsences.Enabled = false;
-            this.grbLesAbsences.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbLesAbsences.Location = new System.Drawing.Point(1515, 31);
+            this.grbLesAbsences.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbLesAbsences.Location = new System.Drawing.Point(1446, 57);
             this.grbLesAbsences.Name = "grbLesAbsences";
-            this.grbLesAbsences.Size = new System.Drawing.Size(910, 689);
+            this.grbLesAbsences.Size = new System.Drawing.Size(755, 582);
             this.grbLesAbsences.TabIndex = 2;
             this.grbLesAbsences.TabStop = false;
             this.grbLesAbsences.Text = "Les absences";
             // 
+            // btnDemandeAjoutAbs
+            // 
+            this.btnDemandeAjoutAbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemandeAjoutAbs.Location = new System.Drawing.Point(33, 431);
+            this.btnDemandeAjoutAbs.Name = "btnDemandeAjoutAbs";
+            this.btnDemandeAjoutAbs.Size = new System.Drawing.Size(263, 53);
+            this.btnDemandeAjoutAbs.TabIndex = 5;
+            this.btnDemandeAjoutAbs.Text = "Ajouter";
+            this.btnDemandeAjoutAbs.UseVisualStyleBackColor = true;
+            this.btnDemandeAjoutAbs.Click += new System.EventHandler(this.btnDemandeAjoutAbs_Click);
+            // 
             // btnDemandeSupprAbs
             // 
-            this.btnDemandeSupprAbs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDemandeSupprAbs.Location = new System.Drawing.Point(618, 609);
+            this.btnDemandeSupprAbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemandeSupprAbs.Location = new System.Drawing.Point(33, 502);
             this.btnDemandeSupprAbs.Name = "btnDemandeSupprAbs";
             this.btnDemandeSupprAbs.Size = new System.Drawing.Size(263, 53);
             this.btnDemandeSupprAbs.TabIndex = 2;
@@ -302,8 +332,8 @@
             // 
             // btnDemandeModifAbs
             // 
-            this.btnDemandeModifAbs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDemandeModifAbs.Location = new System.Drawing.Point(323, 609);
+            this.btnDemandeModifAbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDemandeModifAbs.Location = new System.Drawing.Point(323, 431);
             this.btnDemandeModifAbs.Name = "btnDemandeModifAbs";
             this.btnDemandeModifAbs.Size = new System.Drawing.Size(263, 53);
             this.btnDemandeModifAbs.TabIndex = 1;
@@ -316,17 +346,33 @@
             this.dgvAbsences.AllowUserToAddRows = false;
             this.dgvAbsences.AllowUserToDeleteRows = false;
             this.dgvAbsences.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAbsences.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAbsences.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAbsences.Location = new System.Drawing.Point(33, 41);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.875F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAbsences.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvAbsences.Location = new System.Drawing.Point(33, 47);
             this.dgvAbsences.MultiSelect = false;
             this.dgvAbsences.Name = "dgvAbsences";
             this.dgvAbsences.ReadOnly = true;
+            this.dgvAbsences.RowHeadersVisible = false;
             this.dgvAbsences.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvAbsences.RowTemplate.Height = 33;
             this.dgvAbsences.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAbsences.Size = new System.Drawing.Size(848, 545);
+            this.dgvAbsences.Size = new System.Drawing.Size(693, 366);
             this.dgvAbsences.TabIndex = 0;
-            this.dgvAbsences.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAbsences_CellContentClick);
             // 
             // grbAbsence
             // 
@@ -339,10 +385,10 @@
             this.grbAbsence.Controls.Add(this.label9);
             this.grbAbsence.Controls.Add(this.label10);
             this.grbAbsence.Enabled = false;
-            this.grbAbsence.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbAbsence.Location = new System.Drawing.Point(1515, 772);
+            this.grbAbsence.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grbAbsence.Location = new System.Drawing.Point(1446, 691);
             this.grbAbsence.Name = "grbAbsence";
-            this.grbAbsence.Size = new System.Drawing.Size(910, 345);
+            this.grbAbsence.Size = new System.Drawing.Size(755, 345);
             this.grbAbsence.TabIndex = 3;
             this.grbAbsence.TabStop = false;
             this.grbAbsence.Text = "Ajouter une absence";
@@ -353,7 +399,7 @@
             this.dtpDateFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDateFin.Location = new System.Drawing.Point(182, 134);
             this.dtpDateFin.Name = "dtpDateFin";
-            this.dtpDateFin.Size = new System.Drawing.Size(304, 39);
+            this.dtpDateFin.Size = new System.Drawing.Size(304, 35);
             this.dtpDateFin.TabIndex = 13;
             // 
             // dtpDateDebut
@@ -363,14 +409,13 @@
             this.dtpDateDebut.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDateDebut.Location = new System.Drawing.Point(182, 63);
             this.dtpDateDebut.Name = "dtpDateDebut";
-            this.dtpDateDebut.Size = new System.Drawing.Size(304, 39);
+            this.dtpDateDebut.Size = new System.Drawing.Size(304, 35);
             this.dtpDateDebut.TabIndex = 12;
             this.dtpDateDebut.Value = new System.DateTime(2025, 5, 20, 17, 39, 0, 0);
-            this.dtpDateDebut.ValueChanged += new System.EventHandler(this.dtpDateDebut_ValueChanged);
             // 
             // btnAnnulAbs
             // 
-            this.btnAnnulAbs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAnnulAbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnnulAbs.Location = new System.Drawing.Point(323, 264);
             this.btnAnnulAbs.Name = "btnAnnulAbs";
             this.btnAnnulAbs.Size = new System.Drawing.Size(263, 53);
@@ -381,7 +426,7 @@
             // 
             // btnEnregAbs
             // 
-            this.btnEnregAbs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnregAbs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnregAbs.Location = new System.Drawing.Point(33, 264);
             this.btnEnregAbs.Name = "btnEnregAbs";
             this.btnEnregAbs.Size = new System.Drawing.Size(263, 53);
@@ -395,7 +440,7 @@
             this.cboMotif.FormattingEnabled = true;
             this.cboMotif.Location = new System.Drawing.Point(182, 194);
             this.cboMotif.Name = "cboMotif";
-            this.cboMotif.Size = new System.Drawing.Size(496, 40);
+            this.cboMotif.Size = new System.Drawing.Size(496, 37);
             this.cboMotif.TabIndex = 9;
             // 
             // label6
@@ -403,7 +448,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(27, 202);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 32);
+            this.label6.Size = new System.Drawing.Size(65, 29);
             this.label6.TabIndex = 7;
             this.label6.Text = "Motif";
             // 
@@ -412,7 +457,7 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(27, 134);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(99, 32);
+            this.label9.Size = new System.Drawing.Size(94, 29);
             this.label9.TabIndex = 1;
             this.label9.Text = "Date fin";
             // 
@@ -421,20 +466,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(27, 68);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 32);
+            this.label10.Size = new System.Drawing.Size(130, 29);
             this.label10.TabIndex = 0;
             this.label10.Text = "Date début";
-            // 
-            // btnDemandeAjoutAbs
-            // 
-            this.btnDemandeAjoutAbs.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDemandeAjoutAbs.Location = new System.Drawing.Point(33, 609);
-            this.btnDemandeAjoutAbs.Name = "btnDemandeAjoutAbs";
-            this.btnDemandeAjoutAbs.Size = new System.Drawing.Size(263, 53);
-            this.btnDemandeAjoutAbs.TabIndex = 5;
-            this.btnDemandeAjoutAbs.Text = "Ajouter";
-            this.btnDemandeAjoutAbs.UseVisualStyleBackColor = true;
-            this.btnDemandeAjoutAbs.Click += new System.EventHandler(this.btnDemandeAjoutAbs_Click);
             // 
             // FrmMediaTek86
             // 
@@ -447,7 +481,6 @@
             this.Controls.Add(this.grbLesPersonnels);
             this.Name = "FrmMediaTek86";
             this.Text = "FrmMediaTek86";
-            this.Load += new System.EventHandler(this.FrmMediaTek86_Load);
             this.grbLesPersonnels.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPersonnels)).EndInit();
             this.grbPersonnel.ResumeLayout(false);
