@@ -186,16 +186,17 @@ namespace MediaTek86.view
                     return;
                 }
 
-                // Confirmation d'enregistrement
-                DialogResult result = MessageBox.Show("Voulez-vous enregistrer ces modifications ?","Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result != DialogResult.Yes)
-                {
-                    return; // L'utilisateur a cliqué sur Non et on annule l'enregistrement
-                }
 
                 if (enCoursDeModifPersonnel)
                 {
+                    // Confirmation d'enregistrement
+                    DialogResult result = MessageBox.Show("Voulez-vous enregistrer ces modifications ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result != DialogResult.Yes)
+                    {
+                        return; // L'utilisateur a cliqué sur Non et on annule l'enregistrement
+                    }
+
                     Personnel personnel = (Personnel)dgvPersonnels.SelectedRows[0].DataBoundItem;
                     personnel.Nom = nom;
                     personnel.Prenom = prenom;
@@ -231,8 +232,9 @@ namespace MediaTek86.view
             if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 EnCoursDeModifPersonnel(false);
+                grbPersonnel.Enabled = false;
             }
-            grbPersonnel.Enabled = false;
+
         }
 
         /// <summary>
@@ -412,17 +414,16 @@ namespace MediaTek86.view
                     }
 
 
-                    // Confirmation d'enregistrement
-                    DialogResult result = MessageBox.Show("Voulez-vous enregistrer ces modifications ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                    if (result != DialogResult.Yes)
-                    {
-                        return; // L'utilisateur a cliqué sur Non et on annule l'enregistrement
-                    }
-
-
                     if (enCoursDeModifAbsence && ancienneAbsence != null)
                     {
+                        // Confirmation d'enregistrement
+                        DialogResult result = MessageBox.Show("Voulez-vous enregistrer ces modifications ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result != DialogResult.Yes)
+                        {
+                            return; // L'utilisateur a cliqué sur Non et on annule l'enregistrement
+                        }
+
                         controller.UpdateAbsence(ancienneAbsence, nouvelleAbsence);
                     }
                     else
@@ -458,9 +459,9 @@ namespace MediaTek86.view
             if (MessageBox.Show("Voulez-vous vraiment annuler ?", "Confirmation", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 EnCoursDeModifAbsence(false);
+                grbAbsence.Enabled = false;
             }
-            grbAbsence.Enabled = false;
-            
+                                  
         }
 
         /// <summary>
